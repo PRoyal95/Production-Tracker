@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giblin Truck Bodies | Production & Customization</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+        // Initialize Supabase const _supabase = supabase.createClient('YOUR_URL', 'YOUR_ANON_KEY');
+
+// FUNCTION: Move a truck to the next stage
+async function updateTruckStage(jobId, newStage) {
+  const { data, error } = await _supabase
+    .from('jobs')
+    .update({ status: newStage })
+    .eq('id', jobId);
+    
+  if (error) console.error('Error updating stage:', error);
+  else alert('Truck moved to ' + newStage);
+}></script>
     <style>
         :root {
             --primary: #003366; --secondary: #c0c0c0; --success: #28a745;
@@ -56,7 +68,7 @@
         <div class="stat-card"><h3>12</h3><p>Active Builds</p></div>
         <div class="stat-card"><h3>4</h3><p>In RSA Inspection</p></div>
         <div class="stat-card"><h3>2</h3><p>Delayed Parts</p></div>
-        <div class="stat-card"><h3>€1.2M</h3><p>WIP Value</p></div>
+        <div class="stat-card"><h3>â‚¬1.2M</h3><p>WIP Value</p></div>
     </div>
 
     <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -93,7 +105,7 @@
             <div class="truck-card">
                 <h4>Job #8840 - MAN TGM</h4>
                 <p>Electrical & Beacons</p>
-                <span class="tag tag-custom">360° Cameras</span>
+                <span class="tag tag-custom">360Â° Cameras</span>
                 <span class="tag tag-custom">Tail Lift</span>
             </div>
         </div>
@@ -137,4 +149,5 @@
 </main>
 
 </body>
+
 </html>
