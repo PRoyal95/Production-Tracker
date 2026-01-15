@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giblin Truck Bodies | Production & Customization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #003366; --secondary: #c0c0c0; --success: #28a745;
+            --warning: #ffc107; --danger: #dc3545; --dark: #1a1a1a; --light: #f8f9fa;
+        }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; height: 100vh; background: #eaeff2; }
+        
+        /* Sidebar Navigation */
+        nav { width: 260px; background: var(--dark); color: white; padding: 20px; display: flex; flex-direction: column; }
+        nav h2 { color: var(--warning); font-size: 1.2rem; margin-bottom: 30px; border-bottom: 1px solid #444; pb: 10px; }
+        .nav-item { padding: 15px; cursor: pointer; border-radius: 8px; margin-bottom: 5px; transition: 0.3s; display: flex; align-items: center; }
+        .nav-item i { margin-right: 15px; width: 20px; }
+        .nav-item:hover, .nav-item.active { background: var(--primary); }
+
+        /* Main Content */
+        main { flex: 1; overflow-y: auto; padding: 30px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        
+        /* Live Production Branch (Kanban Style) */
+        .production-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .stage-column { background: #dfe4e8; padding: 15px; border-radius: 8px; min-height: 400px; }
+        .stage-header { font-weight: bold; margin-bottom: 15px; color: var(--primary); text-transform: uppercase; font-size: 0.8rem; }
+        
+        .truck-card { background: white; padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 5px solid var(--primary); cursor: pointer; }
+        .truck-card h4 { margin: 0 0 5px 0; font-size: 1rem; }
+        .truck-card p { margin: 0; font-size: 0.8rem; color: #666; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-top: 8px; background: #eee; }
+        .tag-custom { background: #e3f2fd; color: #007bff; border: 1px solid #007bff; }
+
+        /* Stats Bar */
+        .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: white; padding: 20px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--primary); }
+        .stat-card h3 { margin: 0; font-size: 1.8rem; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>GIBLIN TRUCK BODIES</h2>
+    <div class="nav-item active"><i class="fas fa-industry"></i> Live Production</div>
+    <div class="nav-item"><i class="fas fa-truck-loading"></i> Customization Kits</div>
+    <div class="nav-item"><i class="fas fa-file-contract"></i> RSA Compliance</div>
+    <div class="nav-item"><i class="fas fa-warehouse"></i> Inventory</div>
+    <div class="nav-item"><i class="fas fa-chart-line"></i> Efficiency Reports</div>
+</nav>
+
+<main>
+    <div class="stats-bar">
+        <div class="stat-card"><h3>12</h3><p>Active Builds</p></div>
+        <div class="stat-card"><h3>4</h3><p>In RSA Inspection</p></div>
+        <div class="stat-card"><h3>2</h3><p>Delayed Parts</p></div>
+        <div class="stat-card"><h3>€1.2M</h3><p>WIP Value</p></div>
+    </div>
+
+    <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2>Live Assembly Branch: Sheeaun, Gort</h2>
+        <button style="background: var(--success); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">+ New Chassis Intake</button>
+    </div>
+
+    <div class="production-grid">
+        <div class="stage-column">
+            <div class="stage-header">Stage 1: Sub-frame Fab</div>
+            <div class="truck-card">
+                <h4>Job #8842 - Volvo FM</h4>
+                <p>Client: Keogh's Logistics</p>
+                <span class="tag tag-custom">Crane Reinforcement</span>
+            </div>
+        </div>
+
+        <div class="stage-column">
+            <div class="stage-header">Stage 2: Body Mount</div>
+            <div class="truck-card" style="border-left-color: var(--warning);">
+                <h4>Job #8845 - Scania P320</h4>
+                <p>Insulated Box Fitment</p>
+                <span class="tag">Standard Build</span>
+            </div>
+            <div class="truck-card">
+                <h4>Job #8849 - DAF CF</h4>
+                <p>Curtainsider 26t</p>
+                <span class="tag tag-custom">Double Deck</span>
+            </div>
+        </div>
+
+        <div class="stage-column">
+            <div class="stage-header">Stage 3: Custom/Elec</div>
+            <div class="truck-card">
+                <h4>Job #8840 - MAN TGM</h4>
+                <p>Electrical & Beacons</p>
+                <span class="tag tag-custom">360° Cameras</span>
+                <span class="tag tag-custom">Tail Lift</span>
+            </div>
+        </div>
+
+        <div class="stage-column">
+            <div class="stage-header">Stage 4: QC & RSA</div>
+            <div class="truck-card" style="border-left-color: var(--success);">
+                <h4>Job #8838 - Scania G450</h4>
+                <p>Final Weigh-bridge</p>
+                <span class="tag">IVA Pending</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top: 30px;">
+        <h3><i class="fas fa-clipboard-check"></i> RSA Compliance Watchlist (Ireland)</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+            <tr style="text-align: left; border-bottom: 1px solid #eee; background: #f9f9f9;">
+                <th style="padding: 10px;">Reg/VIN</th>
+                <th>Type Approval</th>
+                <th>Actual Weight</th>
+                <th>Max Allowed</th>
+                <th>Status</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;">VIN...1234</td>
+                <td>NSSTA (Ireland)</td>
+                <td>14,100 kg</td>
+                <td>26,000 kg</td>
+                <td><b style="color: var(--success);">PASSED</b></td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">VIN...5678</td>
+                <td>IVA Stage 2</td>
+                <td>18,450 kg</td>
+                <td>18,000 kg</td>
+                <td><b style="color: var(--danger);">OVERWEIGHT</b></td>
+            </tr>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>
